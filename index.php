@@ -408,7 +408,7 @@ if( $client != false )  {
             
             $overview.= '<div class="col-12"><ol>';
             while( $rowopen = $resultopen->fetch() ) {
-                $overview.= '<li>' . htmlentities( $rowopen['orderNumber'] . ' - ' . $rowopen['company'] . ' (' . $rowopen['customernumber'] . ') - ' . $rowopen['firstname'] . ' ' . $rowopen['lastname'] . ' - ' . $rowopen['city'] ) . '</li>';
+                $overview.= '<li>' . str_replace( array('<','>'), array('&lt;','&gt;'), $rowopen['orderNumber'] . ' - ' . $rowopen['company'] . ' (' . $rowopen['customernumber'] . ') - ' . $rowopen['firstname'] . ' ' . $rowopen['lastname'] . ' - ' . $rowopen['city'] ) . '</li>';
             }
             $overview.= '</ol></div>';
 
